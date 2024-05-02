@@ -20,6 +20,8 @@
     zoom-us
     pcmanfm-qt
 
+    xfsprogs
+
     # Coding stuff
     gnumake
     gcc
