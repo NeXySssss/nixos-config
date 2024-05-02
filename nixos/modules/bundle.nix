@@ -2,7 +2,7 @@
   imports = [
     ./bootloader.nix
     ./sound.nix
-    ./zram.nix
+    #./zram.nix
     ./env.nix
     ./user.nix
     ./xserver.nix

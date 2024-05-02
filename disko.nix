@@ -2,7 +2,7 @@
   disko.devices = {
     disk = {
       my-disk = {
-        device = "/dev/sdb";
+        device = "bruh";
         type = "disk";
         content = {
           type = "gpt";
@@ -29,7 +29,7 @@
               size = "100%";
               content = {
                 type = "filesystem";
-                format = "ext4";
+                format = "xfs";
                 mountpoint = "/";
               };
             };

@@ -6,7 +6,12 @@
     settings = {
       "$mainMod" = "SUPER";
 
-      monitor = ",preferred,auto,1";
+      monitor = [
+        "HDMI-A-1,1920x1080@60.000000,0x1024,1,vrr,1"
+        "DP-1,1920x1080@239.759995,1920x1024,1,vrr,0"
+        "DP-2,2560x1440@143.912003,3840x0,1,transform,3,vrr,1"
+
+      ]
 
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
@@ -44,6 +49,7 @@
         "col.inactive_border" = "rgba(595959aa)";
 
         layout = "dwindle";
+        
 
         no_cursor_warps = false;
       };
@@ -63,6 +69,42 @@
         shadow_render_power = 3;
         "col.shadow" = "rgba(1a1a1aee)";
       };
+
+      workspace = {
+        "HDMI-A-1,21"
+        "DP-2,11"
+        "DP-1,1"
+        "1,monitor:DP-1, default:true"
+        "2,monitor:DP-1"
+        "3,monitor:DP-1"
+        "4,monitor:DP-1"
+        "5,monitor:DP-1"
+        "6,monitor:DP-1"
+        "7,monitor:DP-1"
+        "8,monitor:DP-1"
+        "9,monitor:DP-1"
+        "10,monitor:DP-1"
+        "11,monitor:DP-2"
+        "12,monitor:DP-2"
+        "13,monitor:DP-2"
+        "14,monitor:DP-2"
+        "15,monitor:DP-2"
+        "16,monitor:DP-2"
+        "17,monitor:DP-2"
+        "18,monitor:DP-2"
+        "19,monitor:DP-2"
+        "20,monitor:DP-2"
+        "21,monitor:HDMI-A-1"
+        "22,monitor:HDMI-A-1"
+        "23,monitor:HDMI-A-1"
+        "24,monitor:HDMI-A-1"
+        "25,monitor:HDMI-A-1"
+        "26,monitor:HDMI-A-1"
+        "27,monitor:HDMI-A-1"
+        "28,monitor:HDMI-A-1"
+        "29,monitor:HDMI-A-1"
+        "30,monitor:HDMI-A-1"
+      }
 
       animations = {
         enabled = true;
@@ -123,8 +165,8 @@
 
         "$mainMod, Return, exec, alacritty"
         "$mainMod, Q, killactive,"
-        "$mainMod, M, exit,"
-        "$mainMod, E, exec, dolphin"
+        #"$mainMod, M, exit,"
+        "$mainMod SHIFT, RETURN, exec, dolphin"
         "$mainMod, F, togglefloating,"
         "$mainMod, D, exec, wofi --show drun"
         "$mainMod, P, pseudo, # dwindle"
@@ -187,14 +229,14 @@
         ", XF86AudioMicMute, exec, pamixer --default-source -m"
         
         # Brightness control
-        ", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
-        ", XF86MonBrightnessUp, exec, brightnessctl set +5% "
+        #", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
+        #", XF86MonBrightnessUp, exec, brightnessctl set +5% "
 
         # Configuration files
-        ''$mainMod SHIFT, N, exec, alacritty -e sh -c "rb"''
-        ''$mainMod SHIFT, C, exec, alacritty -e sh -c "conf"''
-        ''$mainMod SHIFT, H, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/hyprland.nix"''
-        ''$mainMod SHIFT, W, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/waybar.nix''
+        #''$mainMod SHIFT, N, exec, alacritty -e sh -c "rb"''
+        #''$mainMod SHIFT, C, exec, alacritty -e sh -c "conf"''
+        #''$mainMod SHIFT, H, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/hyprland.nix"''
+        #''$mainMod SHIFT, W, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/waybar.nix''
         '', Print, exec, grim -g "$(slurp)" - | swappy -f -''
 
         # Waybar
